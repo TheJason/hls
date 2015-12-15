@@ -9,9 +9,9 @@
 					<div style="bottom:0px;position: absolute;">Past</div>
 				</div>	
 			</div>
-			<video data-rank="0" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
-			<video data-rank="1" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
-			<video data-rank="2" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
+			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
+			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
+			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
 			
 		</div>
 		<script>
@@ -28,8 +28,8 @@
 		    	videoNext.style.display = "block";
 		    	video.style.display = "none";
 		    	videoLast.style.display = "none";
-		    	video.stop();
-		    	videoLast.stop();
+		    	video.pause();
+		    	videoLast.pause();
 		    	videoNext.play();
 		    	};
 		    
@@ -37,8 +37,8 @@
 		    	videoNext.style.display = "block";
 		    	video.style.display = "none";
 		    	video.style.display = "none";
-		    	video.stop();
-		    	videoLast.stop();
+		    	video.pause();
+		    	videoLast.pause();
 		    	videoNext.play();
 		    	};
 		    	
@@ -46,8 +46,8 @@
 		    	videoLast.style.display = "block";
 		    	video.style.display = "none";
 		    	videoNext.style.display = "none";
-		    	video.stop();
-		    	videoLast.stop();
+		    	video.pause();
+		    	videoLast.pause();
 		    	videoNext.play();
 		    };
 		    	
@@ -58,8 +58,8 @@
 		      video.style.display = "none";
 		      videoLast.style.display = "none";  
 		      videoNext.play();
-		      video.stop();
-		      videoLast.stop();	
+		      video.pause();
+		      videoLast.pause();	
 		    };
 
 		    rightr.onclick = function() {
@@ -67,8 +67,8 @@
 		      video.style.display = "none";
 		      videoNext.style.display = "none";
 		      videoLast.play();
-		      video.stop();
-		      videoNext.stop();	
+		      video.pause();
+		      videoNext.pause();	
 		    };
 		</script>
 	</body>
