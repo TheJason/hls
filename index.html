@@ -9,9 +9,9 @@
 					<div style="bottom:0px;position: absolute;">Past</div>
 				</div>	
 			</div>
-			<video data-rank="0" webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
-			<video data-rank="1" webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
-			<video data-rank="2" webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
+			<video data-rank="0" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
+			<video data-rank="1" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
+			<video data-rank="2" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
 			
 		</div>
 		<script>
@@ -23,13 +23,34 @@
 
 		    videoNext.style.display = "none";
 		    videoLast.style.display = "none";
-		    /*
-		    	video.onended = function(e) {
-		    		videoNext.style.display = "block";
-		    		video.style.display = "none";
-		    		videoNext.play();
+		   
+		    video.onended = function(e) {
+		    	videoNext.style.display = "block";
+		    	video.style.display = "none";
+		    	videoLast.style.display = "none";
+		    	video.stop();
+		    	videoLast.stop();
+		    	videoNext.play();
 		    	};
-		    */
+		    
+		    videoNext.onended = function(e) {
+		    	videoNext.style.display = "block";
+		    	video.style.display = "none";
+		    	video.style.display = "none";
+		    	video.stop();
+		    	videoLast.stop();
+		    	videoNext.play();
+		    	};
+		    	
+		    videoLast.onended = function(e) {
+		    	videoLast.style.display = "block";
+		    	video.style.display = "none";
+		    	videoNext.style.display = "none";
+		    	video.stop();
+		    	videoLast.stop();
+		    	videoNext.play();
+		    };
+		    	
 		    video.addEventListener('click',function(){video.play(); false});
 
 		    leftr.onclick = function() {
