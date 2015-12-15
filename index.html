@@ -1,0 +1,53 @@
+<html>
+	<head></head>
+	<body>
+		<div id="mainWin" style="width:640px;height:390px; position:relative;">
+			<div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 100%;">
+				<div id="leftr" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px;"></div>
+				<div id="rightr" style="float:right; top:0px; cursor:pointer; height: 100%; width:49%; right:0px;"></div>
+			</div>
+			<div id="ctrl2"></div>
+			<div id="ctrl3"></div>
+			<video data-rank="0"><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
+			<video data-rank="1"><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
+			<video data-rank="2"><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
+			
+		</div>
+		<script>
+		    var video = document.getElementsByTagName('video')[0];
+		    var videoNext = document.getElementsByTagName('video')[1];
+		    var videoLast = document.getElementsByTagName('video')[2];
+		    var leftr = document.getElementById("leftr");
+		    var rightr = document.getElementById("rightr");
+
+		    videoNext.style.display = "none";
+		    videoLast.style.display = "none";
+		    /*
+		    	video.onended = function(e) {
+		    		videoNext.style.display = "block";
+		    		video.style.display = "none";
+		    		videoNext.play();
+		    	};
+		    */
+		    video.addEventListener('click',function(){video.play(); false});
+
+		    leftr.onclick = function() {
+		      videoNext.style.display = "block";
+		      video.style.display = "none";
+		      videoLast.style.display = "none";  
+		      videoNext.play();
+		      video.stop();
+		      videoLast.stop();	
+		    };
+
+		    rightr.onclick = function() {
+		      videoLast.style.display = "block";
+		      video.style.display = "none";
+		      videoNext.style.display = "none";
+		      videoLast.play();
+		      video.stop();
+		      videoNext.stop();	
+		    };
+		</script>
+	</body>
+</html>
