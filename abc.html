@@ -1,5 +1,3 @@
-
-
 <html>
 	<head>
 		<style>
@@ -48,8 +46,8 @@
 			createSmallVideo(vid3,myLoco,myvidID);
 			var video = document.getElementById("vid_3");
 			video.play();
-			stop1.stop();
-			stop2.stop();			
+			stop1.pause();
+			stop2.pause();			
 		}
 
 		function doFuture() {
@@ -63,8 +61,8 @@
 			createSmallVideo(vid2,myLoco,myvidID);
 			var video = document.getElementById("vid_2");
 			video.play();
-			stop1.stop();
-			stop2.stop();
+			stop1.pause();
+			stop2.pause();
 		}
 
 		function createSmallVideo(vid,loco,vidID){
