@@ -21,12 +21,8 @@
 			</div>
 			<video id="vid_1" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
 		</div>
-		<div id="step_2">
-			<video id="vid_2" controls webkit-playsinline><source src=""></video>
-		</div>
-		<div id="step_3">
-			<video id="vid_3" controls webkit-playsinline><source src=""></video>
-		</div>
+		<div id="step_2"></div>
+		<div id="step_3"></div>
 		<div id="step_4"></div>
 		<div id="step_5"></div>
 	</div>
@@ -46,14 +42,15 @@
 			document.getElementById("step_3").style.display="block";
 			var stop1 = document.getElementById("vid_1");
 			var stop2 = document.getElementById("vid_2");
+			
+			var myLoco = 'step_3';
+			var myvidID = 'vid_3';
+			createSmallVideo(vid3,myLoco,myvidID);
 			var video = document.getElementById("vid_3");
-			var sources = video.getElementsByTagName('source');
-			sources[0].src = vid3;
-			video.load();
 			video.play();
-			stop1.pause();
-			stop2.pause();			
-		};
+			stop1.stop();
+			stop2.stop();			
+		}
 
 		function doFuture() {
 			document.getElementById("step_1").style.display="block";
@@ -61,14 +58,26 @@
 			document.getElementById("step_3").style.display="none";
 			var stop1 = document.getElementById("vid_1");
 			var stop2 = document.getElementById("vid_3");
+			var myLoco = 'step_2';
+			var myvidID = 'vid_2';
+			createSmallVideo(vid2,myLoco,myvidID);
 			var video = document.getElementById("vid_2");
-			var sources = video.getElementsByTagName('source');
-			sources[0].src = vid2;
-			video.load();
 			video.play();
-			stop1.pause();
-			stop2.pause();
-		};
+			stop1.stop();
+			stop2.stop();
+		}
+
+		function createSmallVideo(vid,loco,vidID){
+    //alert("createSmallVideo has been called");
+
+    var video = document.createElement("video");
+
+    video.setAttribute("id", vidID);
+    video.setAttribute("src", vid);
+    video.setAttribute("controls", "controls");
+    video.setAttribute("preload", "auto");
+    document.getElementById(loco).appendChild(video);
+}
 	</script>
 </body>
 </html>
