@@ -4,8 +4,8 @@
 	<head>
 		<style>
 			#ovl_1 {width:640px; height: 272px; position:fixed;}
-			.lft {height:100%; width: 50%; float: left; background-color: blue; opacity: 0;}
-			.rght {height:100%; width: 50%; float: right; background-color: red; opacity: 0;}
+			.lft {height:100%; width: 50%; float: left; background-color: blue; opacity: 0; cursor: pointer;}
+			.rght {height:100%; width: 50%; float: right; background-color: red; opacity: 0; cursor: pointer;}
 		</style>
 	</head>
 <body>
@@ -16,13 +16,13 @@
 				<div class="lft" id="past"></div>
 				<div class="rght" id="future"></div>
 			</div>
-			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
+			<video id="vid_1" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
 		</div>
 		<div id="step_2">
-			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
+			<video id="vid_2" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
 		</div>
 		<div id="step_3">
-			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
+			<video id="vid_3" controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
 		</div>
 		<div id="step_4"></div>
 		<div id="step_5"></div>
@@ -31,6 +31,39 @@
 		document.getElementById("step_1").style.display="block";
 		document.getElementById("step_2").style.display="none";
 		document.getElementById("step_3").style.display="none";
+		var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
+		var vid2 = 'http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4';
+		var vid3 = 'http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4';
+		document.getElementById("past").onclick = doPast();
+		document.getElementById("future").onclick = doFuture();
+
+		function doPast() {
+			document.getElementById("step_1").style.display="none";
+			document.getElementById("step_2").style.display="none";
+			document.getElementById("step_3").style.display="block";
+			var stop1 = document.getElementById("vid_1");
+			var stop2 = document.getElementById("vid_2");
+			var video = document.getElementById("vid_3");
+			var sources = video.getElementsByTagName('source');
+			sources[0].src = vid3;
+			video.load();
+			video.play();
+			stop1.pause();
+			stop2.pause();			
+		};
+
+		function doFuture() {
+			document.getElementById("step_1").style.display="block";
+			document.getElementById("step_2").style.display="none";
+			document.getElementById("step_3").style.display="none";
+			var video = document.getElementById("vid_2");
+			var sources = video.getElementsByTagName('source');
+			sources[0].src = vid2;
+			video.load();
+			video.play();
+			stop1.pause();
+			stop2.pause();
+		};
 	</script>
 </body>
 </html>
