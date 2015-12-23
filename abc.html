@@ -1,9 +1,21 @@
+
+
 <html>
-	<head></head>
+	<head>
+		<style>
+			#ovl_1 {width:640px; height: 390px;}
+			.lft {height:390px; width: 320px; float: left; background-color: blue;}
+			.rght {height:390px; width: 320px; float: right; background-color: red;}
+		</style>
+	</head>
 <body>
 	<div id="mainWin" style="width:640px;height:390px; position:relative;">
 		<div id="intro"></div>
 		<div id="step_1">
+			<div id="ovl_1">
+				<div class="lft" id="past"></div>
+				<div class="rght" id="future"></div>
+			</div>
 			<video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
 		</div>
 		<div id="step_2">
