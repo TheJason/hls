@@ -1,10 +1,121 @@
 <html>
-<head></head>
-<body>
-<script>
-window.MediaSource = window.MediaSource || window.WebKitMediaSource;
-if (!!!window.MediaSource) {
-  alert('MediaSource API is not available');
-}
-</script>
-</body>
+  <head>
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4>; rel=prefetch">
+    <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4>; rel=prefetch">
+    <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4>; rel=prefetch">
+  </head>
+  <body>  Click Video To Start<br>
+    <div id="mainWin" style="width:640px;height:390px; position:relative;">
+      <!--<div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 100%;">
+        <div id="leftr" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px; text-align:center; valign:bottom;">
+          <div style="bottom:0px;position: absolute;">Future</div></div>
+        <div id="rightr" style="float:right; top:0px; cursor:pointer; height: 100%; width:49%; right:0px; text-align:center; valign:bottom;">
+          <div style="bottom:0px;position: absolute;">Past</div>
+        </div>  
+      </div>
+      <video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
+      <video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
+      <video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
+      -->
+      <video id="myvid" style="background-color:black;"><source src=""></video>
+    </div>
+    <script>
+      var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
+      var vid2 = 'http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4';
+      var vid3 = 'http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4';
+      //var vid4 = '1-4.mp4';
+      //var vid5 = '1-5.mp4';
+      
+
+      window.onload = function() {
+          loadAnotherVideo(vid1);
+      };
+
+      function loadAnotherVideo(i) {
+          var video = document.getElementById("myvid");
+          var sources = video.getElementsByTagName('source');
+        
+        var videoStartTime = 0;
+        var durationTime = 0;    
+          
+          video.addEventListener('loadedmetadata', function() {
+            videoStartTime = 1;
+            durationTime = 14; 
+            this.currentTime = videoStartTime;}, 
+          false);
+
+          sources[0].src = i;
+          video.load();
+          video.play();
+          video.onended = function(e) {
+            if (i == vid1) {loadAnotherVideo(vid2);};
+            if (i == vid2) {loadAnotherVideo(vid3);};
+            //if (i == vid3) {loadAnotherVideo(vid4);};
+            //if (i == vid4) {loadAnotherVideo(vid5);};
+          }
+      }
+
+
+        /*
+        var video = document.getElementsByTagName('video')[0];
+        var videoNext = document.getElementsByTagName('video')[1];
+        var videoLast = document.getElementsByTagName('video')[2];
+        var leftr = document.getElementById("leftr");
+        var rightr = document.getElementById("rightr");
+
+        videoNext.style.display = "none";
+        videoLast.style.display = "none";
+       
+        video.onended = function(e) {
+          videoNext.style.display = "block";
+          video.style.display = "none";
+          videoLast.style.display = "none";
+          video.pause();
+          videoLast.pause();
+          videoNext.play();
+          };
+        
+        videoNext.onended = function(e) {
+          videoLast.style.display = "block";
+          videoNext.style.display = "none";
+          video.style.display = "none";
+          video.pause();
+          videoLast.play();
+          videoNext.pause();
+          };
+          
+        videoLast.onended = function(e) {
+          videoLast.style.display = "none";
+          video.style.display = "none";
+          videoNext.style.display = "none";
+          video.pause();
+          videoLast.pause();
+          videoNext.pause();
+        };
+          
+        video.addEventListener('click',function(){video.play(); false});
+
+        leftr.onclick = function() {
+          videoNext.style.display = "block";
+          video.style.display = "none";
+          videoLast.style.display = "none";  
+          videoNext.play();
+          video.pause();
+          videoLast.pause();  
+        };
+
+        rightr.onclick = function() {
+          videoLast.style.display = "block";
+          video.style.display = "none";
+          videoNext.style.display = "none";
+          videoLast.play();
+          video.pause();
+          videoNext.pause();  
+        };
+        */
+        
+    </script>
+  </body>
+</html>
