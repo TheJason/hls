@@ -6,7 +6,7 @@
     <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4>; rel=prefetch">
     <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4>; rel=prefetch">
   </head>
-  <body>  Click Video To Start<br>
+  <body style="background-color:black;">  Click Video To Start<br>
     <div id="mainWin" style="width:640px;height:390px; position:relative;">
       <!--<div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 100%;">
         <div id="leftr" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px; text-align:center; valign:bottom;">
@@ -19,7 +19,7 @@
       <video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4"></video>
       <video controls webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4"></video>
       -->
-      <video id="myvid" onclick="this.play();" style="background-color:black;"><source src=""></video>
+      <video id="myvid" onclick="this.play();" poster="intro1.png" style="background-color:black;"><source src=""></video>
     </div>
     <script>
       var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
