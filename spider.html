@@ -6,16 +6,16 @@
     <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4>; rel=prefetch">
     <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4>; rel=prefetch">
   </head>
-  <body style="background-color:black">  Click Video To Start<br>
+  <body style="background-color:black;">
     <div id="mainWin" style="width:640px;height:390px; position:relative;">
-      <div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 70%; display:none;">
+      <div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 70%; display:none;  z-index:2000;">
           <div id="leftr" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px; text-align:center; valign:bottom;">
           <div style="bottom:0px;position: absolute;"></div></div>
           <div id="rightr" style="float:right; top:0px; cursor:pointer; height: 100%; width:49%; right:0px; text-align:center; valign:bottom;">
           <div style="bottom:0px;position: absolute;"></div>
           </div>  
       </div>
-      <video id="myvid" poster="intro.png" style="background-color:black;"><source src=""></video>
+      <video id="myvid" poster="intro.png" style="background-color:black; position:absolute; z-index:200;"><source src=""></video>
     </div>
     <script>
       var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
