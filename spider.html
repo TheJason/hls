@@ -15,7 +15,9 @@
           <div style="bottom:0px;position: absolute;"></div>
           </div>  
       </div>
-      <video id="myvid" poster="intro.png" style="background-color:black; position:absolute; z-index:200;"><source src=""></video>
+      <video id="myvid" poster="intro.png" style="background-color:black; position:absolute; z-index:200;">
+        <source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4">
+      </video>
     </div>
     <script>
       var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
@@ -24,9 +26,14 @@
       //var vid4 = '1-4.mp4';
       //var vid5 = '1-5.mp4';
       
-
+      var video = document.getElementById("myvid");
+      var sources = video.getElementsByTagName('source');
+      var ctrlr = document.getElementById("ctrl1");
+          video.onplaying = function(e) {
+            ctrlr.style.display = 'block';
+          }
       window.onload = function() {
-          loadAnotherVideo(vid1);
+          //loadAnotherVideo(vid1);
       };
 
       function loadAnotherVideo(i) {
