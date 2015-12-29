@@ -28,6 +28,9 @@
       
       var video = document.getElementById("myvid");
       var sources = video.getElementsByTagName('source');
+      video.onclick =  function() {
+        video.play();
+      }
       var ctrlr = document.getElementById("ctrl1");
           video.onplaying = function(e) {
             ctrlr.style.display = 'block';
