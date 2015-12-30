@@ -2,19 +2,35 @@
   <head>
     <script>
       var video = document.createElement('video');
-      video.setAttribute('webkit-playsinline, 'true'); // must be set before src is set or it will be ignored
+      video.setAttribute('webkit-playsinline, 'true');
       video.setAttribute('src', 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4');
-      document.body.appendChild(video); // append video to DOM
+      document.body.appendChild(video);
        
       video.addEventListener('canplaythrough', function(){
-          video.play(); // wait until enough of the video has been downloaded to play it through without hiccups
+          video.play();
       }, false);
        
-      video.load();  // must be called after the canplaythrough event listener is set
-      video.play();  // required for pre-iOS 4.3 devices
-      video.pause(); // required for pre-iOS 4.3 devices
+      video.load(); 
+      video.play(); 
+      video.pause();
     </script>
   </head>
   <body>
+    <div id="video" class="ad-view">
+  <div class="video-frame">
+ 
+    <!-- A simple video element. We want to show the default controls and
+         want the video to begin playback inline (rather than fullscreen).
+         We also attach an ad-outlet so that we can easily reference this
+         element from the View Controller code -->
+    <video src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4" controls webkit-playsinline ad-outlet="video"></video>
+ 
+    <p>
+      The launch experience.
+    </p>
+ 
+  </div>
+</div>
+
   
   </body>
