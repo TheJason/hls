@@ -8,22 +8,16 @@
 	<title>HTML canvas video player</title>
 
 	<link rel="stylesheet" href="https://stanko.github.io/skyblue/css/skyblue.css">
-	<link rel="stylesheet" href="demo/demo.css">
+	<link rel="stylesheet" href="js/demo.css">
 </head>
 
 <body>
-	<div class="header">
-		<div class="content">
-			<a href="https://github.com/Stanko/html-canvas-video-player" class="padding-right-20">GitHub</a>
-			<a href="https://github.com/Stanko/html-canvas-video-player/archive/master.zip">Download</a>
-		</div>
-	</div>
 	<div class="video-wrapper js-video-wrapper">
 		<div class="video-responsive">
 			<video class="video js-video" muted>
-				<source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.webm" type="video/webm">
+				<!--<source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.webm" type="video/webm">-->
 				<source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" type="video/mp4">
-				<source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.ogv" type="video/ogg">
+				<!--<source src="http://www.quirksmode.org/html5/videos/big_buck_bunny.ogv" type="video/ogg">-->
 				Your browser does not support HTML5 video.
 			</video>
 
@@ -36,87 +30,12 @@
 		</div>
 	</div>
 
-	<div class="content">
-		<h1 class="margin-bottom-10">HTML canvas video player</h1>
-		<h3 class="margin-bottom-20">Easy way to play videos inline on iPhones</h3>
-		<p>
-			This is intended for iPhone only, it can be used on any other browser
-			which support canvas and video. It doesn't play sound, I have no real
-			plan of adding audio support.
-		</p>
-		<p>
-			It can be used with any HTML video player, just position canvas over the video.
-			Intended usage was for background videos and showcases.
-			It doesn't include timeline as in demo, but that piece of code is also on GitHub.
-			This is plain JavaScript solution, no dependencies, IE9+ and modern browsers.
-		</p>
-		<p>
-			For IE9 there must be <code>requestAnimationFrame</code> polyfill
-		</p>
-		<p>
-			Download on
-			<a href="https://github.com/Stanko/html-canvas-video-player">GitHub</a>.
-		</p>
-
-<h4 class="margin-top-30">Minimum setup:</h4>
-<pre>
-var canvasVideo = new <span class="color-success">CanvasVideoPlayer</span>({
-    videoSelector: '.js-video',
-    canvasSelector: '.js-canvas'
-});
-</pre>
-
-<h4 class="margin-top-30">Aditional options:</h4>
-<pre>
-var canvasVideo = new <span class="color-success">CanvasVideoPlayer</span>({
-    videoSelector: '.js-video',
-    canvasSelector: '.js-canvas',
-    framesPerSecond: 25,
-    hideVideo: true <span class="color-grey">// should script hide the video element</span>
-});
-</pre>
-
-<h4 class="margin-top-30">Methods:</h4>
-<pre>
-<span class="color-grey">// Unbinds all of the events (when you destroy the player)</span>
-canvasVideo.unbind()
-
-<span class="color-grey">// Plays video</span>
-canvasVideo.play()
-
-<span class="color-grey">// Pauses video</span>
-canvasVideo.pause()
-
-<span class="color-grey">// Plays video if paused and vice versa</span>
-canvasVideo.playPause()
-
-<span class="color-grey">// Draws current frame on canvas, should not be called manually</span>
-canvasVideo.drawFrame()
-</pre>
-
-<h4 class="margin-top-30">Detecting iPhone:</h4>
-<pre>
-var isIphone = navigator.userAgent.toLowerCase().indexOf('iphone') >= 0;
-
-if (isIphone) {
-    <span class="color-grey">// Init CanvasVideoPlayer here</span>
-    new <span class="color-success">CanvasVideoPlayer</span>({
-    	<span class="color-grey">// Options</span>
-    });
-}
-</pre>
-
-
-		<p class="margin-top-50">
-			Released under MIT licence.
-		</p>
-	</div>
-
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="demo/fastclick.js"></script>
-	<script src="demo/demo.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script src="js/demo.js"></script>
 
-	<script src="js/canvas-video-player.js"></script>
+	<script src="js/canvasplayer.js"></script>
 
 
 	<script>
