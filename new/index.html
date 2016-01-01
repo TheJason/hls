@@ -14,10 +14,9 @@ and open the template in the editor.
     <body>
 
 <div id="theater">
-  <video id="video" src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4" controls="false"></video>
+  <video id="video" src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4" controls="false" style="display:none;"></video>
   <canvas id="canvas"></canvas>
-  <label>
-    <br />Try to play me :)</label>
+  <button id="playbut">Play</button>
   <br />
 </div>
 <script>
@@ -25,7 +24,9 @@ and open the template in the editor.
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var video = document.getElementById('video');
+  var playBut = document.getElementById('playbut');
 
+  $( "#playbut" ).click(function() {video.play();});
   video.addEventListener('play', function() {
     var $this = this; //cache
     (function loop() {
