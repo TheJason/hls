@@ -4,31 +4,121 @@
 	<meta charset="UTF-8" >
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
-
+	<style>
+		#myVideo,canvas{
+			position:absolute;
+			left:0px;
+			top:0px;
+		}
+	</style>
 </head>
 
 <body>
-
+	<video id="myVideo" width="400" height = "400">  
+    		<source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4" type="video/mp4">
+	</video>
+	<canvas id="myCanvas" width ="400" height="400"> </canvas>
 	<script>
-		var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
-      		var vid2 = 'http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4';
-      		var vid3 = 'http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4';
-		var video1 = document.createElement('video');
-		var video2 = document.createElement('video');
-		var video3 = document.createElement('video');
-		
-		video1.setAttribute('webkit-playsinline', 'true'); //must be set before src is set or it will be ignored
-		video1.setAttribute('src', vid1);
-		
-		document.body.appendChild(video1); // append video to DOM
-		 
-		video1.addEventListener('canplaythrough', function(){
-		    video1.play(); // wait until enough of the video has been downloaded to play it through without hiccups
-		}, false);
-		 
-		video1.load();  // must be called after the canplaythrough event listener is set
-		video1.play();  // required for pre-iOS 4.3 devices
-		video1.pause(); // required for pre-iOS 4.3 devices
-	</script>	
+		var buttonObject =
+{
+  width: 70,
+  height: 70,
+  x: 0,
+  y: 0,
+
+      
+  centerX: function()
+  {
+    return this.x + (this.width / 2);
+  },
+  centerY: function()
+  {
+    return this.y + (this.height / 2);
+  },
+  halfWidth: function()
+  {
+    return this.width / 2;
+  },
+  halfHeight: function()
+  {
+    return this.height / 2;
+  }
+};
+
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+
+var video = document.getElementById("myVideo");
+
+
+var button = Object.create(buttonObject);
+button.x = 30;
+button.y = 100;
+
+
+window.addEventListener("mousemove",onMouseMove,false);
+window.addEventListener("mousedown",onMouseDown,false);
+
+var clicked = false; 
+
+var mouseX;
+var mouseY;
+var buttonVX = 5;
+
+
+
+function onMouseDown(event)
+{
+clicked = true;
+}
+
+
+function onMouseMove(event)			{ 
+mouseX = event.pageX - canvas.offsetLeft; 
+mouseY = event.pageY - canvas.offsetTop;
+}
+
+main();
+function main() {
+window.setTimeout(main,33);
+context.clearRect(0,0,canvas.width,canvas.height);
+
+
+context.fillStyle = "#fff";
+context.fillRect(button.x,button.y,button.width,button.height);
+
+
+
+var vx = mouseX - button.centerX();				
+var vy = mouseY - button.centerY();
+
+video.play();
+
+button.x += buttonVX;
+
+if(button.x > canvas.width - button.width)
+{
+buttonVX = -5;
+}
+if(button.x < 0)
+{
+buttonVX = 5;
+}
+  
+var combinedHalfWidths = 1 + button.halfWidth();
+var combinedHalfHeights = 1 + button.halfHeight();
+
+  if(Math.abs(vx) < combinedHalfWidths)
+  {
+    if(Math.abs(vy) < combinedHalfHeights)
+    { 
+    video.pause();
+   
+    }
+
+  
+  }
+}
+	</script>
 </body>
 </html>
