@@ -21,6 +21,11 @@ and open the template in the editor.
   <br />
 </div>
 <script>
+    $(function() {
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var video = document.getElementById('video');
+
   video.addEventListener('play', function() {
     var $this = this; //cache
     (function loop() {
@@ -30,6 +35,7 @@ and open the template in the editor.
       }
     })();
   }, 0);
-});</script>
+});
+</script>
     </body>
 </html>
