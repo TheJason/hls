@@ -25,6 +25,10 @@
       <video id="myvid" poster="intro.png" style="background-color:black; position:absolute; z-index:200;">
         <source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4">
       </video>
+      <video id="myvid2" style="background-color:black; position:absolute; z-index:200; display:none;"></video>
+      <video id="myvid3" style="background-color:black; position:absolute; z-index:200; display:none;"></video>
+      <video id="myvid4" style="background-color:black; position:absolute; z-index:200; display:none;"></video>
+      <video id="myvid5" style="background-color:black; position:absolute; z-index:200; display:none;"></video>
     </div>
     <script>
       var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
@@ -48,38 +52,10 @@
       window.onload = function() {
           //loadAnotherVideo(vid1);
       };
-      var video2 = document.createElement('video');
-          video2.id = 'myvid2';
-          video2.autoPlay = false;
-          video2.style.display = 'none';
-          video2.style.zIndex = '200';
-          video2.style.position = 'absolute';
-          video2.style.backgroundColor = 'black';
-      var video3 = document.createElement('video');
-          video3.id = 'myvid3';
-          video3.autoPlay = false;
-          video3.style.display = 'none';
-          video3.style.zIndex = '200';
-          video3.style.position = 'absolute';
-          video3.style.backgroundColor = 'black';
-      var video4 = document.createElement('video');
-          video4.id = 'myvid4';
-          video4.autoPlay = false;
-          video4.style.display = 'none';
-          video4.style.zIndex = '200';
-          video4.style.position = 'absolute';
-          video4.style.backgroundColor = 'black';
-      var video5 = document.createElement('video');
-          video5.id = 'myvid5';
-          video5.autoPlay = false;
-          video5.style.display = 'none';
-          video5.style.zIndex = '200';
-          video5.style.position = 'absolute';
-          video5.style.backgroundColor = 'black';
-      myv2 = document.getElementById("myvid2");
-      myv3 = document.getElementById("myvid3");
-      myv4 = document.getElementById("myvid4");
-      myv5 = document.getElementById("myvid5");
+      video2 = document.getElementById("myvid2");
+      video3 = document.getElementById("myvid3");
+      video4 = document.getElementById("myvid4");
+      video5 = document.getElementById("myvid5");
       video.onplaying = function() { 
           video2.src = vid2;
           video3.src = vid3;
