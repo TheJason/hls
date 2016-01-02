@@ -61,13 +61,13 @@
           video3.src = vid3;
           ctrlr.style.display = 'block';
       };
-      if (video2.onplaying) { 
+      video2.onplaying = function() { 
           video4.src = vid4;
           video5.src = vid5;
           ctrlr2.style.display = 'block';
           ctrlr.style.display = 'none';
       };
-      if (video3.onplaying) { 
+      video3.onplaying = function() { 
           video4.src = vid4;
           video5.src = vid5;
           ctrlr2.style.display = 'block';
