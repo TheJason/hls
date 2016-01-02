@@ -81,50 +81,22 @@
       myv4 = document.getElementById("myvid4");
       myv5 = document.getElementById("myvid5");
       video.onplaying = function() { 
-          myv2.src = vid2;
-          myv3.src = vid3;
+          video2.src = vid2;
+          video3.src = vid3;
           ctrlr.style.display = 'block';
       };
-      if (myv2.onplaying) { 
-          myv4.src = vid4;
-          myv5.src = vid5;
+      if (video2.onplaying) { 
+          video4.src = vid4;
+          video5.src = vid5;
           ctrlr2.style.display = 'block';
           ctrlr.style.display = 'none';
       };
-      if (myv3.onplaying) { 
-          myv4.src = vid4;
-          myv5.src = vid5;
+      if (video3.onplaying) { 
+          video4.src = vid4;
+          video5.src = vid5;
           ctrlr2.style.display = 'block';
           ctrlr.style.display = 'none';
       };
-      /*
-      function loadAnotherVideo(i) {
-          var video = document.getElementById("myvid");
-          var sources = video.getElementsByTagName('source');
-        
-        var videoStartTime = 0;
-        var durationTime = 0;    
-          
-          video.addEventListener('loadedmetadata', function() {
-            videoStartTime = 1;
-            durationTime = 14; 
-            this.currentTime = videoStartTime;}, 
-          false);
-
-          
-          sources[0].src = i;
-          video.load();
-          video.play();
-          var ctrlr = document.getElementById("ctrl1");
-          ctrlr.style.display = 'block';
-          video.onended = function(e) {
-            if (i == vid1) {loadAnotherVideo(vid2);};
-            if (i == vid2) {loadAnotherVideo(vid3);};
-            if (i == vid3) {loadAnotherVideo(vid4);};
-            if (i == vid4) {loadAnotherVideo(vid5);};
-          }
-          
-      }*/
       var leftr = document.getElementById("leftr");
       var rightr = document.getElementById("rightr");
       leftr.onclick = function() {
