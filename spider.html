@@ -53,20 +53,48 @@
           video2.src = vid2;
           video2.autoPlay = false;
           video2.style.display = 'none';
+          video2.style.z-index = 200;
+          video2.style.position = 'absolute';
+          video2.style.background-color = 'black';
       var video3 = document.createElement('video');
           video3.src = vid3;
           video3.autoPlay = false;
           video3.style.display = 'none';
+          video3.style.z-index = 200;
+          video3.style.position = 'absolute';
+          video3.style.background-color = 'black';
       };
-      if (video2.onplaying or video3.onplaying) { 
+      if (video2.onplaying) { 
       var video4 = document.createElement('video');
           video4.src = vid4;
           video4.autoPlay = false;
           video4.style.display = 'none';
+          video4.style.z-index = 200;
+          video4.style.position = 'absolute';
+          video4.style.background-color = 'black';
       var video5 = document.createElement('video');
           video5.src = vid5;
           video5.autoPlay = false;
           video5.style.display = 'none';
+          video5.style.z-index = 200;
+          video5.style.position = 'absolute';
+          video5.style.background-color = 'black';
+      };
+      if (video3.onplaying) { 
+      var video4 = document.createElement('video');
+          video4.src = vid4;
+          video4.autoPlay = false;
+          video4.style.display = 'none';
+          video4.style.z-index = 200;
+          video4.style.position = 'absolute';
+          video4.style.background-color = 'black';
+      var video5 = document.createElement('video');
+          video5.src = vid5;
+          video5.autoPlay = false;
+          video5.style.display = 'none';
+          video5.style.z-index = 200;
+          video5.style.position = 'absolute';
+          video5.style.background-color = 'black';
       };
       function loadAnotherVideo(i) {
           var video = document.getElementById("myvid");
@@ -95,10 +123,43 @@
       }
       var leftr = document.getElementById("leftr");
       var rightr = document.getElementById("rightr");
-      leftr.onclick = function() {loadAnotherVideo(vid2);ctrlr.style.display = 'none';ctrlr2.style.display = 'block';};
-      rightr.onclick = function() {loadAnotherVideo(vid3);ctrlr.style.display = 'none';ctrlr2.style.display = 'block';};
-      girl.onclick = function() {loadAnotherVideo(vid5);ctrlr.style.display = 'none';};
-      world.onclick = function() {loadAnotherVideo(vid4);ctrlr.style.display = 'none';};
+      leftr.onclick = function() {
+        //loadAnotherVideo(vid2);
+        video2.style.display = 'block';
+        video2.play();
+        video.style.display = 'none';
+        video.pause();
+        ctrlr.style.display = 'none';
+        ctrlr2.style.display = 'block';};
+      rightr.onclick = function() {
+        //loadAnotherVideo(vid3);
+        video3.style.display = 'block';
+        video3.play();
+        video.style.display = 'none';
+        video.pause();
+        ctrlr.style.display = 'none';
+        ctrlr2.style.display = 'block';
+      };
+      girl.onclick = function() {
+        //loadAnotherVideo(vid5);
+        video5.style.display = 'block';
+        video5.play();
+        video2.style.display = 'none';
+        video2.pause();
+        video3.style.display = 'none';
+        video3.pause();
+        ctrlr.style.display = 'none';
+      };
+      world.onclick = function() {
+        //loadAnotherVideo(vid4);
+        video4.style.display = 'block';
+        video4.play();
+        video2.style.display = 'none';
+        video2.pause();
+        video3.style.display = 'none';
+        video3.pause();
+        ctrlr.style.display = 'none';
+      };
     </script>
   </body>
 </html>
