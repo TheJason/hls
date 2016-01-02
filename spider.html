@@ -77,39 +77,47 @@
       var rightr = document.getElementById("rightr");
       leftr.onclick = function() {
         //loadAnotherVideo(vid2);
-        video2.style.display = 'block';
         video2.play();
-        video.style.display = 'none';
-        video.pause();
+        video2.onplaying = function() {
+          video2.style.display = 'block';
+          video.style.display = 'none';
+          video.pause();
+        };
         ctrlr.style.display = 'none';
         ctrlr2.style.display = 'block';};
       rightr.onclick = function() {
         //loadAnotherVideo(vid3);
-        video3.style.display = 'block';
         video3.play();
-        video.style.display = 'none';
-        video.pause();
+        video3.onplaying = function() {
+          video3.style.display = 'block';
+          video.style.display = 'none';
+          video.pause();
+        };
         ctrlr.style.display = 'none';
         ctrlr2.style.display = 'block';
       };
       girl.onclick = function() {
         //loadAnotherVideo(vid5);
-        video5.style.display = 'block';
         video5.play();
-        video2.style.display = 'none';
-        video2.pause();
-        video3.style.display = 'none';
-        video3.pause();
+        video5.onplaying = function() {
+          video5.style.display = 'block';
+          video2.style.display = 'none';
+          video2.pause();
+          video3.style.display = 'none';
+          video3.pause();
+        };
         ctrlr.style.display = 'none';
       };
       world.onclick = function() {
         //loadAnotherVideo(vid4);
-        video4.style.display = 'block';
         video4.play();
-        video2.style.display = 'none';
-        video2.pause();
-        video3.style.display = 'none';
-        video3.pause();
+        video4.onplaying = function() {
+          video4.style.display = 'block';
+          video2.style.display = 'none';
+          video2.pause();
+          video3.style.display = 'none';
+          video3.pause();
+        };
         ctrlr.style.display = 'none';
       };
     </script>
