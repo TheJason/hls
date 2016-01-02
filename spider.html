@@ -7,7 +7,7 @@
     <meta http-equiv="Link" content="<http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4>; rel=prefetch">
   </head>
   <body style="background-color:black;">
-    <div id="mainWin" style="width:640px;height:390px; position:relative;">
+    <div id="mainWin" style="width:100%;height:100%; position:relative;">
       <div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 70%; display:none;  z-index:2000;">
           <div id="leftr" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px; text-align:center; valign:bottom;">
           <div style="bottom:0px;position: absolute;"></div></div>
@@ -61,7 +61,7 @@
           video3.src = vid3;
           ctrlr.style.display = 'block';
       };
-      video2.onplaying = function() { 
+      video2.onplay = function() { 
           video2.style.display = 'block';
           video.style.display = 'none';
           video.pause();
@@ -70,7 +70,7 @@
           ctrlr2.style.display = 'block';
           ctrlr.style.display = 'none';
       };
-      video3.onplaying = function() { 
+      video3.onplay = function() { 
           video3.style.display = 'block';
           video.style.display = 'none';
           video.pause();
@@ -79,14 +79,14 @@
           ctrlr2.style.display = 'block';
           ctrlr.style.display = 'none';
       };
-      video4.onplaying = function() {
+      video4.onplay = function() {
           video4.style.display = 'block';
           video2.style.display = 'none';
           video2.pause();
           video3.style.display = 'none';
           video3.pause();
         };
-      video5.onplaying = function() {
+      video5.onplay = function() {
           video5.style.display = 'block';
           video2.style.display = 'none';
           video2.pause();
