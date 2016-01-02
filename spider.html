@@ -74,21 +74,22 @@
           video5.style.backgroundColor = 'black';
       video.onplaying = function() { 
           video2.src = vid2;
-      var video3 = document.createElement('video');
           video3.src = vid3;
+          ctrlr.style.display = 'block';
       };
       if (video2.onplaying) { 
-      var video4 = document.createElement('video');
           video4.src = vid4;
-      var video5 = document.createElement('video');
           video5.src = vid5;
+          ctrlr2.style.display = 'block';
+          ctrlr.style.display = 'none';
       };
       if (video3.onplaying) { 
-      var video4 = document.createElement('video');
           video4.src = vid4;
-      var video5 = document.createElement('video');
           video5.src = vid5;
+          ctrlr2.style.display = 'block';
+          ctrlr.style.display = 'none';
       };
+      /*
       function loadAnotherVideo(i) {
           var video = document.getElementById("myvid");
           var sources = video.getElementsByTagName('source');
@@ -102,6 +103,7 @@
             this.currentTime = videoStartTime;}, 
           false);
 
+          
           sources[0].src = i;
           video.load();
           video.play();
@@ -113,7 +115,8 @@
             if (i == vid3) {loadAnotherVideo(vid4);};
             if (i == vid4) {loadAnotherVideo(vid5);};
           }
-      }
+          
+      }*/
       var leftr = document.getElementById("leftr");
       var rightr = document.getElementById("rightr");
       leftr.onclick = function() {
