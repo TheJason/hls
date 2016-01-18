@@ -26,14 +26,15 @@
 			var video = document.getElementById("myvid");
 			var newURL = 'vid' + thisVideo
 			video.src = eval(newURL);
+			if(thisVideo == 1) {
+				video.play();
+				}
+			else {
+				video.pause();
+			}
 			function getURLParameter(name) {return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null}
 			function Playr() {
-				if(thisVideo == 1) {
-				  video.play();
-				}
-				else {
-				  video.pause();
-				}
+				video.play();
 			}	
 			function Stopr() {
 				video.pause();
