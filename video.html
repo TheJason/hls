@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<style>
+			#videoOverlay {}
+			#videoControls {}
+			.videoFrames {}
+		</style>
+	</head>
+	<body>
+		<div id="videoControls"></div>
+		<div id="videoOverlay">
+
+		</div>
+
+	
+		<script>
+			function getURLParameter(name) {return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null}
+			$(document).ready(function() {
+		  		thisVideo = getURLParameter('video');
+		  		alert(thisVideo);
+			});
+		</script>
+	</body>
+</html>
+
+			

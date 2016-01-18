@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<style>
+			#videoOverlay {}
+			#videoControls {}
+			.videoFrames {}
+		</style>
+	</head>
+	<body>
+		<div id="videoControls"></div>
+		<div id="videoOverlay">
+
+		</div>
+			<iframe id="video1" src="video.html?video=1" class="videoFrames" frameborder="0"></iframe>
+			<!--<iframe id="video2" src="video.html?video=2" class="videoFrames" frameborder="0"></iframe>
+			<iframe id="video3" src="video.html?video=3" class="videoFrames" frameborder="0"></iframe>
+			<iframe id="video4" src="video.html?video=4" class="videoFrames" frameborder="0"></iframe>
+			<iframe id="video5" src="video.html?video=5" class="videoFrames" frameborder="0"></iframe>-->
+	
+		<script>
+			$(document).ready(function() {
+		  		$('#play-video').on('click', function(ev) {
+		    		$("#video1")[0].src += "&autoplay=1";
+		    		ev.preventDefault();
+		  		});
+			});
+		</script>
+	</body>
+</html>
