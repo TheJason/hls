@@ -20,11 +20,11 @@
 	</head>
 	<body>
 		<div id="videoControls">
-			<a href="#" id="vid1but">Play Video 1</a> | 
-			<a href="#" id="vid2but">Play Video 2</a> | 
-			<a href="#" id="vid3but">Play Video 3</a> | 
-			<a href="#" id="vid4but">Play Video 4</a> | 
-			<a href="#" id="vid5but">Play Video 5</a>
+			<a href="#" id="vid1but">Start</a> | 
+			<a href="#" id="vid2but">Future</a> | 
+			<a href="#" id="vid3but">Past</a> | 
+			<a href="#" id="vid4but">World</a> | 
+			<a href="#" id="vid5but">Girl</a>
 		</div>
 		<div id="videoOverlay">
 
@@ -36,75 +36,72 @@
 			<iframe id="video5" src="video.html?video=5" class="videoFrames" frameborder="0"></iframe>
 		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script>
-			$(document).ready(function() {
-				var video1But = document.getElementById("vid1but");
-				var video2But = document.getElementById("vid2but");
-				var video3But = document.getElementById("vid3but");
-				var video4But = document.getElementById("vid4but");
-				var video5But = document.getElementById("vid5but");
-			    //var sources = video.getElementsByTagName('source');
-			    video1But.onclick =  function() {
-			    	document.getElementById("video1").contentWindow.Playr();
-					document.getElementById("video2").contentWindow.Stopr();
-					document.getElementById("video3").contentWindow.Stopr();
-					document.getElementById("video4").contentWindow.Stopr();
-					document.getElementById("video5").contentWindow.Stopr();
-					document.getElementById("video1").style.display = 'block';
-					document.getElementById("video2").style.display = 'none';	
-					document.getElementById("video3").style.display = 'none';	
-					document.getElementById("video4").style.display = 'none';	
-					document.getElementById("video5").style.display = 'none';				    	
-			    }
-			    video2But.onclick =  function() {
-			    	document.getElementById("video2").contentWindow.Playr();
-					document.getElementById("video1").contentWindow.Stopr();
-					document.getElementById("video3").contentWindow.Stopr();
-					document.getElementById("video4").contentWindow.Stopr();
-					document.getElementById("video5").contentWindow.Stopr();
-					document.getElementById("video1").style.display = 'none';
-					document.getElementById("video2").style.display = 'block';	
-					document.getElementById("video3").style.display = 'none';	
-					document.getElementById("video4").style.display = 'none';	
-					document.getElementById("video5").style.display = 'none';	
-			    }
-			    video3But.onclick =  function() {
-			    	document.getElementById("video3").contentWindow.Playr();
-					document.getElementById("video2").contentWindow.Stopr();
-					document.getElementById("video1").contentWindow.Stopr();
-					document.getElementById("video4").contentWindow.Stopr();
-					document.getElementById("video5").contentWindow.Stopr();
-					document.getElementById("video1").style.display = 'none';
-					document.getElementById("video2").style.display = 'none';	
-					document.getElementById("video3").style.display = 'block';	
-					document.getElementById("video4").style.display = 'none';	
-					document.getElementById("video5").style.display = 'none';	
-			    }
-			    video4But.onclick =  function() {
-			    	document.getElementById("video4").contentWindow.Playr();
-					document.getElementById("video2").contentWindow.Stopr();
-					document.getElementById("video3").contentWindow.Stopr();
-					document.getElementById("video1").contentWindow.Stopr();
-					document.getElementById("video5").contentWindow.Stopr();
-					document.getElementById("video1").style.display = 'none';
-					document.getElementById("video2").style.display = 'none';	
-					document.getElementById("video3").style.display = 'none';	
-					document.getElementById("video4").style.display = 'block';	
-					document.getElementById("video5").style.display = 'none';	
-			    }
-			    video5But.onclick =  function() {
-			    	document.getElementById("video5").contentWindow.Playr();
-					document.getElementById("video2").contentWindow.Stopr();
-					document.getElementById("video3").contentWindow.Stopr();
-					document.getElementById("video4").contentWindow.Stopr();
-					document.getElementById("video1").contentWindow.Stopr();
-					document.getElementById("video1").style.display = 'none';
-					document.getElementById("video2").style.display = 'none';	
-					document.getElementById("video3").style.display = 'none';	
-					document.getElementById("video4").style.display = 'none';	
-					document.getElementById("video5").style.display = 'block';	
-			    }
-		  		
-			});
+			var video1But = document.getElementById("vid1but");
+			var video2But = document.getElementById("vid2but");
+			var video3But = document.getElementById("vid3but");
+			var video4But = document.getElementById("vid4but");
+			var video5But = document.getElementById("vid5but");
+		    //var sources = video.getElementsByTagName('source');
+		    video1But.onclick =  function() {
+		    	document.getElementById("video1").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'block';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'none';				    	
+		    }
+		    video2But.onclick =  function() {
+		    	document.getElementById("video2").contentWindow.Playr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'block';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'none';	
+		    }
+		    video3But.onclick =  function() {
+		    	document.getElementById("video3").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'block';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'none';	
+		    }
+		    video4But.onclick =  function() {
+		    	document.getElementById("video4").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'block';	
+				document.getElementById("video5").style.display = 'none';	
+		    }
+		    video5But.onclick =  function() {
+		    	document.getElementById("video5").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'block';	
+		    }
 		</script>
 	</body>
 </html>
