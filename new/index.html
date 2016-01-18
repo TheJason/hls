@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=0, initial-scale=1.0">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>ios-video-test</title>
+  <style>
+	body {
+    overflow: hidden;
+    background: black;
+  }
+  .center {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .play {
+    background: rgba(0,0,0,0.5);
+  }
+  .button {
+    display: inline-block;
+    margin: auto;
+  }
+  canvas {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    z-index:200;
+  }
+  .icon {
+    width: 25vw;
+  }
+  .info {
+    color: white;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.65);
+    font-family: 'Helvetica', sans-serif;
+    font-size: 10px;
+  }
+  </style>
+</head>
+
+<body>
+      <div id="mainWin" style="width:640px;height:390px; position:relative;">
+      <div id="ctrl1" style="position: absolute;left: 0px;top: 0px; width:100%; height: 70%; display:none;  z-index:2000;">
+          <div id="leftr" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px; text-align:center; valign:bottom;">
+          <div style="bottom:0px;position: absolute;"></div></div>
+          <div id="rightr" style="float:right; top:0px; cursor:pointer; height: 100%; width:49%; right:0px; text-align:center; valign:bottom;">
+          <div style="bottom:0px;position: absolute;"></div>
+          </div>  
+      </div>
+      <div id="ctrl2" style="position: absolute;left: 0px;top: 0px; width:100%; height: 70%; display:none;  z-index:2000;">
+          <div id="girl" style="float:left; top:0px; cursor:pointer; height: 100%; width:49%; left: 0px; text-align:center; valign:bottom;">
+          <div style="bottom:0px;position: absolute;"></div></div>
+          <div id="world" style="float:right; top:0px; cursor:pointer; height: 100%; width:49%; right:0px; text-align:center; valign:bottom;">
+          <div style="bottom:0px;position: absolute;"></div>
+          </div>  
+      </div>
+      </div>
+<canvas></canvas>
+  <div class="center play" style="display: none;">
+    <a class="button">
+      <img src="http://jam3.github.io/ios-video-test/assets/play.svg" class="icon" />
+    </a>
+  </div>
+  <div class="info">click to swap WebGL effects</div>
+  <script src="js/bundle.js"></script>
+  <script>
+	var vid1 = '/hls/new/assets/1-Opening_MPEG.mp4';
+	var vid2 = '/hls/new/assets/2A-Future_MPEG.mp4';
+	var vid3 = '/hls/new/assets/2B-Past_MPEG.mp4';
+	
+	window.onload = function() {
+			loadAnotherVideo(vid1);
+	};
+	function loadAnotherVideo(i) {
+	    var video = document.getElementByTagName("video");
+	    var sources = video.getElementsByTagName('source');
+		
+		var videoStartTime = 0;
+		var durationTime = 0;    
+	    
+	    video[0].addEventListener('loadedmetadata', function() {
+	  		videoStartTime = 1;
+	  		durationTime = 14; 
+	  		this.currentTime = videoStartTime;}, 
+	  	false);
+	    sources[0].src = i;
+	    var ctrlr = document.getElementById("ctrl1");
+      var ctrlr2 = document.getElementById("ctrl2");
+          video[0].onplaying = function(e) {
+            ctrlr.style.display = 'block';
+          }
+	    video[0].load();
+	    video[0].play();
+	    video[0].onended = function(e) {
+	    	if (i == vid1) {loadAnotherVideo(vid2);};
+	    	if (i == vid2) {loadAnotherVideo(vid3);};
+	    }
+	}
+	var leftr = document.getElementById("leftr");
+      var rightr = document.getElementById("rightr");
+      leftr.onclick = function() {loadAnotherVideo(vid2);ctrlr.style.display = 'none';ctrlr2.style.display = 'block';};
+      rightr.onclick = function() {loadAnotherVideo(vid3);ctrlr.style.display = 'none';ctrlr2.style.display = 'block';};
+      girl.onclick = function() {loadAnotherVideo(vid5);ctrlr.style.display = 'none';};
+      world.onclick = function() {loadAnotherVideo(vid4);ctrlr.style.display = 'none';};
+  </script>
+</body>
+</html>

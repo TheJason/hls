@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<style>
+			#ovl_1 {width:640px; height: 235px; position:absolute; z-index: 200; display:none;}
+			#vid_1 {position: absolute; z-index: 100;}
+			.lft {height:100%; width: 50%; float: left; background-color: blue; opacity: 0; cursor: pointer;}
+			.rght {height:100%; width: 50%; float: right; background-color: red; opacity: 0; cursor: pointer;}
+			#step_1 {display:block;}
+			#step_2 {display: none;}
+			#step_3 {display: none;}
+		</style>
+	</head>
+<body>
+	<div id="mainWin" style="width:640px;height:235px; position:relative;">
+		<div id="intro"></div>
+		<div id="step_1">
+			<video id="vid_1" controls poster="intro.png" webkit-playsinline><source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4"></video>
+			<div id="ovl_1">
+				<div class="lft" id="future" onclick="doFuture();"></div>
+				<div class="rght" id="past" onclick="doPast();"></div>
+			</div>
+		</div>
+		<div id="step_2"></div>
+		<div id="step_3"></div>
+		<div id="step_4"></div>
+		<div id="step_5"></div>
+	</div>
+	<script>
+		document.getElementById("step_1").style.display="block";
+		document.getElementById("step_2").style.display="none";
+		document.getElementById("step_3").style.display="none";
+		var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
+		var vid2 = 'http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4';
+		var vid3 = 'http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4';
+		//document.getElementById("past").onclick = doPast();
+		//document.getElementById("future").onclick = doFuture();
+		document.getElementById("vid_1").onplay = function() {
+			document.getElementById("ovl_1").style.display="block";
+		}
+
+		function doPast() {
+			document.getElementById("step_1").style.display="none";
+			document.getElementById("step_2").style.display="none";
+			document.getElementById("step_3").style.display="block";
+			var stop1 = document.getElementById("vid_1");
+			var stop2 = document.getElementById("vid_2");
+			
+			var myLoco = 'step_3';
+			var myvidID = 'vid_3';
+			createSmallVideo(vid3,myLoco,myvidID);
+			var video = document.getElementById("vid_3");
+			video.play();
+			stop1.pause();
+			stop2.pause();			
+		}
+
+		function doFuture() {
+			document.getElementById("step_1").style.display="none";
+			document.getElementById("step_2").style.display="block";
+			document.getElementById("step_3").style.display="none";
+			var stop1 = document.getElementById("vid_1");
+			var stop2 = document.getElementById("vid_3");
+			var myLoco = 'step_2';
+			var myvidID = 'vid_2';
+			createSmallVideo(vid2,myLoco,myvidID);
+			var video = document.getElementById("vid_2");
+			video.play();
+			stop1.pause();
+			stop2.pause();
+		}
+
+		function createSmallVideo(vid,loco,vidID){
+    //alert("createSmallVideo has been called");
+
+    var video = document.createElement("video");
+
+    video.setAttribute("id", vidID);
+    video.setAttribute("src", vid);
+    video.setAttribute("controls", "controls");
+    video.setAttribute("poster", "pastfuture1.png");
+    video.setAttribute("preload", "auto");
+    document.getElementById(loco).appendChild(video);
+}
+	</script>
+</body>
+</html>

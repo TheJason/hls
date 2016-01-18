@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<style>
+			body,html {margin:none; padding:none; background-color:black;}
+			#videoOverlay {}
+			#videoControls {position:absolute; top:0; left:0; width:100%; height: 30px; color: white; z-index: 1000; background-color: black; text-align: center;}
+			#videoControls a {padding:8px; color:white; text-decoration: none;}
+			#videoControls a:hover {text-decoration: underline;}
+			
+			.videoFrames {width:100%; position:absolute; height: 100%; border:none; z-index: 100; display: none;}
+			.active {display:block;}
+		</style>
+	</head>
+	<body>
+		<div id="videoControls">
+			<a href="#" id="vid1but">Start</a> | 
+			<a href="#" id="vid2but">Future</a> | 
+			<a href="#" id="vid3but">Past</a> | 
+			<a href="#" id="vid4but">World</a> | 
+			<a href="#" id="vid5but">Girl</a>
+		</div>
+		<div id="videoOverlay">
+
+		</div>
+			<iframe id="video1" src="video.html?video=1" class="videoFrames active" frameborder="0"></iframe>
+			<iframe id="video2" src="video.html?video=2" class="videoFrames" frameborder="0"></iframe>
+			<iframe id="video3" src="video.html?video=3" class="videoFrames" frameborder="0"></iframe>
+			<iframe id="video4" src="video.html?video=4" class="videoFrames" frameborder="0"></iframe>
+			<iframe id="video5" src="video.html?video=5" class="videoFrames" frameborder="0"></iframe>
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script>
+			var video1But = document.getElementById("vid1but");
+			var video2But = document.getElementById("vid2but");
+			var video3But = document.getElementById("vid3but");
+			var video4But = document.getElementById("vid4but");
+			var video5But = document.getElementById("vid5but");
+		    //var sources = video.getElementsByTagName('source');
+		    video1But.onclick =  function() {
+		    	document.getElementById("video1").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'block';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'none';				    	
+		    }
+		    video2But.onclick =  function() {
+		    	document.getElementById("video2").contentWindow.Playr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'block';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'none';	
+		    }
+		    video3But.onclick =  function() {
+		    	document.getElementById("video3").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'block';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'none';	
+		    }
+		    video4But.onclick =  function() {
+		    	document.getElementById("video4").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video5").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'block';	
+				document.getElementById("video5").style.display = 'none';	
+		    }
+		    video5But.onclick =  function() {
+		    	document.getElementById("video5").contentWindow.Playr();
+				document.getElementById("video2").contentWindow.Stopr();
+				document.getElementById("video3").contentWindow.Stopr();
+				document.getElementById("video4").contentWindow.Stopr();
+				document.getElementById("video1").contentWindow.Stopr();
+				document.getElementById("video1").style.display = 'none';
+				document.getElementById("video2").style.display = 'none';	
+				document.getElementById("video3").style.display = 'none';	
+				document.getElementById("video4").style.display = 'none';	
+				document.getElementById("video5").style.display = 'block';	
+		    }
+		</script>
+	</body>
+</html>
