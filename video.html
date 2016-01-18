@@ -8,24 +8,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	<head>
 		<style>
-			#videoOverlay {}
-			#videoControls {}
-			.videoFrames {}
+			#myVid {width:100%;}
 		</style>
 	</head>
 	<body>
-		<div id="videoControls"></div>
-		<div id="videoOverlay">
-
-		</div>
-
+		<video id="myvid" poster="intro.png" style="background-color:black; position:absolute; z-index:200;" webkit-playsinline>
+        	<source src="http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4">
+      	</video>
 		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script>
+			var vid1 = 'http://static.theochre.com/clients/SpidermanAndroid/1-Opening_MPEG.mp4';
+      		var vid2 = 'http://static.theochre.com/clients/SpidermanAndroid/2A-Future_MPEG.mp4';
+      		var vid3 = 'http://static.theochre.com/clients/SpidermanAndroid/2B-Past_MPEG.mp4';
+      		var vid4 = 'http://static.theochre.com/clients/SpidermanAndroid/3B-World_MPEG.mp4';
+      		var vid5 = 'http://static.theochre.com/clients/SpidermanAndroid/3A-Girl_MPEG.mp4';
+      		var thisVideo = getURLParameter('video');
+			var video = document.getElementById("myvid");
+			var newURL = 'vid' + thisVideo
+			video.src = eval(newURL);
 			function getURLParameter(name) {return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null}
-			$(document).ready(function() {
-		  		thisVideo = getURLParameter('video');
-		  		alert(thisVideo);
-			});
+			function Playr() {
+				if(thisVideo == 1) {
+				  video.play();
+				}
+				else {
+				  video.pause();
+				}
+			}	
+			function Stopr() {
+				video.pause();
+			}
 		</script>
 	</body>
 </html>
